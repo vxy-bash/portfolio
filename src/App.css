@@ -391,3 +391,260 @@ html, body {
   .hero      { padding: 32px 24px; }
   .dock-item { padding: 8px 18px; font-size: 0.78rem; }
 }
+
+/* ── Video Control ── */
+.video-control {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+.video-control:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* ── Language Switcher ── */
+.lang-switch-container {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 100;
+}
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(6, 4, 16, 0.5);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: var(--pill);
+  backdrop-filter: blur(12px);
+}
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--tx-2);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.lang-btn.active, .lang-btn:hover {
+  color: var(--tx);
+}
+.lang-divider {
+  color: var(--tx-3);
+  font-size: 0.8rem;
+}
+
+/* ── Modals ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-content {
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-top: 2px solid var(--c, var(--acc));
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--tx-2);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: var(--tx);
+}
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.modal-body {
+  margin-bottom: 24px;
+}
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* ── Utilities ── */
+.mt-2 { margin-top: 8px; }
+.mt-4 { margin-top: 16px; }
+.mt-6 { margin-top: 24px; }
+.mb-6 { margin-bottom: 24px; }
+.mr-2 { margin-right: 8px; }
+.inline-block { display: inline-block; }
+.cursor-pointer { cursor: pointer; }
+.text-lg { font-size: 1.1rem; }
+.text-2xl { font-size: 1.5rem; }
+.font-bold { font-weight: 700; }
+.max-w-2xl { max-width: 42rem; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.whitespace-nowrap { white-space: nowrap; }
+.text-purple-400 { color: #a855f7; }
+.text-green-400 { color: #4ade80; }
+.text-blue-400 { color: #60a5fa; }
+
+@media (min-width: 768px) {
+  .md\:flex-row { flex-direction: row; }
+  .md\:items-center { align-items: center; }
+  .md\:mt-0 { margin-top: 0; }
+}
+
+/* ── Timeline ── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 18px;
+  margin-left: 6px;
+}
+.timeline-item {
+  position: relative;
+}
+.timeline-dot {
+  position: absolute;
+  left: -25px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--acc);
+  border: 2px solid var(--bg);
+}
+.timeline-year {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ── Case Study Modal Grid ── */
+.grid-case-study {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: var(--r);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.case-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Contact Form ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--tx-2);
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: var(--tx);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--acc);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+/* ── FAQ Grid ── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Stats Box ── */
+.stats-box {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-left: 4px solid #4ade80;
+}
+.tracking-wider { letter-spacing: 0.05em; }
+.uppercase { text-transform: uppercase; }
+.text-xs { font-size: 0.75rem; }
+.block { display: block; }
+.mb-8 { margin-bottom: 32px; }
+.gap-14px { gap: 14px; }
+.gap-4 { gap: 16px; }
+.text-4xl { font-size: 2.5rem; }
+.text-xl { font-size: 1.25rem; }
